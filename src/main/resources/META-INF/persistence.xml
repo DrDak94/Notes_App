@@ -1,0 +1,20 @@
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             version="3.0">
+    <persistence-unit name="miUnidad" transaction-type="RESOURCE_LOCAL"> <!-- Atentos con este dato -->
+        <properties>
+            <!-- Configuración de la base de datos -->
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/notes?serverTimezone=UTC"/>
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value=""/>
+            <!-- Configura el dialecto de Hibernate, indica cómo debe generar el SQL según la base de datos -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <!-- Crear las tablas automáticamente -->
+            <property name="hibernate.hbm2ddl.auto" value="update"/> <!--create(en desarrollo) o update-->
+            <!-- Mostrar sentencias SQL -->
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+        </properties>
+
+    </persistence-unit>
+</persistence>
